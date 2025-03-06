@@ -1,7 +1,3 @@
-# Criando o arquivo README.md com o descritivo e todo o conteúdo completo solicitado
-
-readme_content = """
-
 # 📚 SQL Server - Política Completa de Backup
 
 Este repositório contém uma **política completa de backup para ambientes SQL Server**, cobrindo todos os aspectos necessários para garantir a segurança e a integridade dos dados em bancos de dados SQL Server.
