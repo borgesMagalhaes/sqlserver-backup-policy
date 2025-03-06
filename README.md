@@ -87,8 +87,8 @@ New-Item -ItemType Directory -Path "D:\\SQLBackups\\Full"
 New-Item -ItemType Directory -Path "D:\\SQLBackups\\Diferencial"
 New-Item -ItemType Directory -Path "D:\\SQLBackups\\Log"
 New-Item -ItemType Directory -Path "C:\\Scripts"
-
-2. Criar os Jobs no SQL Server Agent
+```
+### 2. Criar os Jobs no SQL Server Agent
 Backup Full (Diário)
 Nome: Backup Full Diário
 Frequência: Diário, 01:00
@@ -101,21 +101,21 @@ Backup de Log (a cada 15 minutos)
 Nome: Backup Log Transações
 Frequência: A cada 15 minutos
 Script utilizado: BackupLog.sql
-3. Agendar a Limpeza no Windows Task Scheduler
+### 3. Agendar a Limpeza no Windows Task Scheduler
 Criar uma nova tarefa agendada.
 Configurar execução diária (recomendado às 02:00).
 Comando da tarefa:
-```
 
+```
 powershell.exe -ExecutionPolicy Bypass -File "C:\\Scripts\\LimpezaBackupsSQL.ps1"
-
 ```
+
 estes de Recuperação (Recomendado)
 Teste	Frequência
 Restore completo (Full + Diff + Logs)	Mensal
 Simulação de perda parcial	Trimestral
 Verificação de consistência (DBCC CHECKDB) após restore	Mensal
-🔐 Segurança e Boas Práticas
+### 🔐 Segurança e Boas Práticas
 Restrinja permissões nas pastas de backup.
 Utilize criptografia em backups sensíveis.
 Realize testes periódicos de restauração.
